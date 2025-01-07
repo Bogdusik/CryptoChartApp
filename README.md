@@ -1,50 +1,80 @@
 # CryptoChartApp
 
-This application provides a real-time visualization of cryptocurrency prices. It fetches the latest cryptocurrency data from the CoinMarketCap API and displays interactive charts for selected cryptocurrencies. The application also calculates and displays the price change over different time intervals (minute, hour, day, week).
+CryptoChartApp is an intuitive application designed to provide real-time visualization of cryptocurrency prices. By leveraging the CoinMarketCap API, it displays dynamic, interactive charts for selected cryptocurrencies and calculates price changes over various time intervals. Whether you're a trader or an enthusiast, this app helps you monitor market trends with ease.
 
 ## Features
-- Real-time cryptocurrency price tracking.
-- Interactive line charts displaying price changes over time.
-- Displays price changes for the last minute, hour, day, and week.
-- Modern and visually appealing user interface with charts and price change labels.
+- **Real-Time Cryptocurrency Tracking**: Stay up-to-date with the latest price movements.
+- **Interactive Line Charts**: Visualize price changes with smooth, interactive charts.
+- **Time Interval Price Analysis**: View price changes over the last minute, hour, day, and week.
+- **Customizable Display**: Adjust the number of cryptocurrency charts displayed in the application.
+- **Modern User Interface**: A sleek and visually appealing design for enhanced usability.
 
 ## Requirements
-To use this application, you need to:
-1. Register for an account on [CoinMarketCap](https://coinmarketcap.com/api/).
-2. Obtain your personal API key from the CoinMarketCap API dashboard.
+To get started, you'll need:
+1. An account on [CoinMarketCap](https://coinmarketcap.com/api/).
+2. A personal API key from the CoinMarketCap API dashboard.
 
 ## Setup Instructions
-1. Clone this repository:
+Follow these steps to set up and run the application:
+
+1. **Clone the Repository**:
    ```bash
    git clone https://github.com/yourusername/CryptoChartApp.git
-   
-2. Navigate to the project directory:
+   ```
+
+2. **Navigate to the Project Directory**:
+   ```bash
    cd CryptoChartApp
+   ```
 
-3. Open the CryptoAPI.java file and insert your API key in the following line:
+3. **Insert Your API Key**:
+   Open the `CryptoAPI.java` file and replace `<YOUR_API_KEY>` with your API key:
+   ```java
    private static final String API_KEY = "<YOUR_API_KEY>";
+   ```
 
-4. Build the project using Maven:
+4. **Build the Project**:
+   Use Maven to build the application:
+   ```bash
    mvn clean install
-   
-5. Run the application:
-   mvn exec:java
+   ```
 
-The application will open a window displaying real-time cryptocurrency charts. You can customize which cryptocurrencies are shown by adjusting the number of displayed charts in the Main.java file.
+5. **Run the Application**:
+   Launch the app using Maven:
+   ```bash
+   mvn exec:java
+   ```
+
+6. **Customize the Display** (Optional):
+   Adjust the number of cryptocurrency charts displayed by increasing or decreasing the value in the `Main.java` file:
+   ```java
+   private static final int NUMBER_OF_CHARTS = <desired number>;
+   ```
+
+When the application starts, it will open a window displaying real-time cryptocurrency charts and price change labels.
 
 ## How It Works
-1. The application uses the CoinMarketCap API to fetch the latest cryptocurrency data in JSON format.
-2. The data is parsed, and charts are created using JFreeChart.
-3. A Timer is used to update the charts every second with the latest data.
-4. The application calculates and displays the price change over various time intervals.
+1. The application retrieves live cryptocurrency data from the CoinMarketCap API in JSON format.
+2. The JSON data is parsed to extract relevant price and time interval information.
+3. Dynamic charts are generated using the JFreeChart library and updated every second using a Timer.
+4. Price changes over multiple time frames are calculated and displayed alongside the charts.
 
 ## Dependencies
-- Spring Boot: For making API requests.
-- Jackson Databind: For parsing JSON responses.
-- JFreeChart: For generating and displaying charts.
+This project relies on the following libraries:
+- **Spring Boot**: For handling API requests.
+- **Jackson Databind**: For parsing JSON data.
+- **JFreeChart**: For creating and displaying charts.
 
 ## License
-This project is licensed under the MIT License - see the LICENSE file for details.
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
 
 ## Acknowledgements
-https://coinmarketcap.com/api/ for providing real-time cryptocurrency data.
+Special thanks to:
+- [CoinMarketCap API](https://coinmarketcap.com/api/) for providing real-time cryptocurrency data.
+
+## Future Enhancements
+- Adding support for more time intervals (e.g., monthly and yearly trends).
+- Enabling user-specific cryptocurrency selections via a configuration file or UI.
+- Providing advanced analytics, such as average price trends or market comparisons.
+
+With CryptoChartApp, you'll gain insights into cryptocurrency trends in real time. Adjust it to suit your needs and explore the dynamic world of digital assets.
